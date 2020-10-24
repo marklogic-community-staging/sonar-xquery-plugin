@@ -38,19 +38,19 @@ abstract class AbstractXQueryCheck<L : AbstractXQueryParserListener>(private val
 }
 
 class XdmpEvalCheck : AbstractXQueryCheck<XdmpEvalListener>(XdmpEvalListener::class) {
-    override val key = "xdmpeval"
-    override val name = "xdmp:eval should be avoided where possible"
+    override val key = "xdmp-eval"
+    override val name = "xdmp:eval should be avoided where possible."
     override val description = "xdmp:eval is a threat of code injection, and should be avoided."
     override val type = RuleType.VULNERABILITY
     override val message = "Avoid using xdmp:eval() where possible. Instead use either xdmp:invoke(), xdmp:unpath() or if possible assign functions to variables to dynamically evaluate code logic"
     override val severity = Severity.MAJOR
 }
 
-class XdmpValueCheck : AbstractXQueryCheck<XdmpEvalListener>(XdmpEvalListener::class) {
-    override val key = "xdmpvalue"
-    override val name = "xdmp:eval should be avoided where possible"
-    override val description = "xdmp:eval is a threat of code injection, and should be avoided."
+class XdmpValueCheck : AbstractXQueryCheck<XdmpValueListener>(XdmpValueListener::class) {
+    override val key = "xdmp-value"
+    override val name = "xdmp:value should be avoided where possible."
+    override val description = "xdmp:value can potentially expose an injection vulernability, and should be avoided when using externally provided values"
     override val type = RuleType.VULNERABILITY
-    override val message = "Avoid using xdmp:eval() where possible. Instead use either xdmp:invoke(), xdmp:unpath() or if possible assign functions to variables to dynamically evaluate code logic"
-    override val severity = Severity.MAJOR
+    override val message = "Avoid using xdmp:value() where possible. Instead use either xdmp:invoke(), xdmp:unpath() or if possible assign functions to variables to dynamically evaluate code logic"
+    override val severity = Severity.MINOR
 }

@@ -19,3 +19,13 @@ class XdmpEvalListener : AbstractXQueryParserListener() {
         }
     }
 }
+
+class XdmpValueListener : AbstractXQueryParserListener() {
+    override fun enterQName(ctx: XQueryParser.QNameContext) {
+        val qname = ctx?.FullQName()?.text ?: ""
+
+        if (qname.toLowerCase() == "xdmp:value") {
+            addViolation(Violation(ctx!!.FullQName().symbol.line))
+        }
+    }
+}
