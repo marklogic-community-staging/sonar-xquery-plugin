@@ -14,8 +14,16 @@ class XQueryChecks {
         const val REPOSITORY_KEY = "xquery"
         const val PROFILE_NAME = "Default"
         val checks = arrayOf(
+                XQueryVersionCheck(),
+                StrongTypingInFunctionDeclarationCheck(),
+                StrongTypingInModuleVariableCheck(),
                 XdmpEvalCheck(),
-                XdmpValueCheck()
+                XdmpValueCheck(),
+                OperationsInPredicateCheck(),
+                StrongTypingInFlworCheck(),
+                FunctionMappingCheck(),
+                XPathDescendantStepsCheck(),
+                XPathTextStepsCheck()
         )
     }
 }
