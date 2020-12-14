@@ -1,4 +1,4 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
 import org.antlr.v4.runtime.Token
 import org.antlr.v4.runtime.tree.Trees

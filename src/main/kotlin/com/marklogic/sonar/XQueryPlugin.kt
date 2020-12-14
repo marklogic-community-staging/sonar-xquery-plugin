@@ -1,4 +1,4 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
 import org.sonar.api.Plugin
 import org.sonar.api.Plugin.Context

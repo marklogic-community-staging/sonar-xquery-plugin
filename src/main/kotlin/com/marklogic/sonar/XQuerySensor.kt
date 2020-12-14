@@ -1,7 +1,7 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
-import net.crosier.sonar.XQuery.Companion.KEY
-import net.crosier.sonar.XQueryChecks.Companion.REPOSITORY_KEY
+import com.marklogic.sonar.XQuery.Companion.KEY
+import com.marklogic.sonar.XQueryChecks.Companion.REPOSITORY_KEY
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.sonar.api.batch.fs.FileSystem
