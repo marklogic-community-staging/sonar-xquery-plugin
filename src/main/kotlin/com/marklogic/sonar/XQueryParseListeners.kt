@@ -219,3 +219,8 @@ class XPathTextStepsListener : AbstractXQueryParserListener() {
         }
     }
 }
+
+/** TODO: EffectiveBooleanListener
+ * Implementation on hold.  Requires searching entire project for other function calls/return types, which this
+ * version does not support due to memory constraints.
+ **/

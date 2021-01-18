@@ -11,6 +11,7 @@ class XQueryPlugin : Plugin {
         context.addExtensions(
                 XQuery::class.java,
                 XQueryDefaultProfile::class.java,
+                XQuerySonarWayProfile::class.java,
                 XQuerySensor::class.java,
                 XQueryRules::class.java
         )

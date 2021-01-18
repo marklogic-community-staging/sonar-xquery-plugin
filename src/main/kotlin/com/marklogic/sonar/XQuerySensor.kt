@@ -2,6 +2,7 @@ package com.marklogic.sonar
 
 import com.marklogic.sonar.XQuery.Companion.KEY
 import com.marklogic.sonar.XQueryChecks.Companion.REPOSITORY_KEY
+import com.marklogic.sonar.XQueryErrorListener
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.sonar.api.batch.fs.FileSystem
@@ -33,7 +34,20 @@ class XQuerySensor(private val fs: FileSystem) : Sensor {
             val lexer = XQueryLexer(stream)
             val tokens = CommonTokenStream(lexer)
             val parser = XQueryParser(tokens)
+            val errorListener = XQueryErrorListener()
+            parser.addErrorListener(errorListener)
             val parseTree = parser.module()
+
+            errorListener.errors.forEach {(lineNumber, message)  ->
+                with(context.newIssue().forRule(RuleKey.of(REPOSITORY_KEY, errorListener.key))) {
+                    val location = newLocation().apply {
+                        on(inputFile)
+                        message(message)
+                        at(inputFile.selectLine(lineNumber))
+                    }
+                    at(location).save()
+                }
+            }
 
             XQueryChecks.checks.forEach { check ->
                 val violations = check.violations(parseTree)

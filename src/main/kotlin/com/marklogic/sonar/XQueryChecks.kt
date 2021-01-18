@@ -25,6 +25,10 @@ class XQueryChecks {
                 XPathDescendantStepsCheck(),
                 XPathTextStepsCheck()
         )
+
+        val defaultChecks = arrayOf(
+                XQueryVersionCheck()
+        )
     }
 }
 
