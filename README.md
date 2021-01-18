@@ -1,7 +1,7 @@
 # Sonar XQuery Plugin
 
 This language plugin for the SonarQube code analysis tool (http://sonarqube.org) is intended to work on recent versions of the SonarQube platform 
-(currently version 8.5). It is based on the original plugin work by Chris Cieslinkski (https://github.com/malteseduck/sonar-xquery-plugin/) 
+(currently version 8.6). It is based on the original plugin work by Chris Cieslinkski (https://github.com/malteseduck/sonar-xquery-plugin/) 
 which was last updated to work on Sonar 4.3. This plugin is a COMPLETE rewrite, and has been written using the Kotlin language.
 
 The XQuery parser imported is from xqDocs (https://github.com/xqdoc/xqdoc) and is based on ANTLR4. This parser includes some xqDocs
@@ -18,7 +18,7 @@ To build the plugin, follow the steps below:
 1. Build the plugin artifact. 
 From the sonar-xquery-extension directory, run:
 
-    ```mvn clean package```
+    ```mvn clean package sonar-packaging:sonar-plugin```
     
     This will generate the jar file to be deployed into SonarQube in the target directory.
     
@@ -39,7 +39,7 @@ performant method is the stand alone sonar-scanner.
 
 # Language Checks
 
-The following "Rules" are grouped by one of five severity levels:  INFO, MINOR, MAJOR< CRITICAL, and BLOCKING.  Each 
+The following "Rules" are grouped by one of five severity levels:  INFO, MINOR, MAJOR, CRITICAL, and BLOCKING.  Each 
 check gives a basic description based on the original [Sonar XQuery plugin](https://github.com/malteseduck/sonar-xquery-plugin) and the [Blakely.com blog article]( 
 https://blakeley.com/blogofile/archives/518/).      
 
