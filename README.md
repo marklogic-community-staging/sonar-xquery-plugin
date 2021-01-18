@@ -39,7 +39,7 @@ performant method is the stand alone sonar-scanner.
 
 # Language Checks
 
-The following "Rules" are grouped by one of five severity levels:  INFO, MINOR, MAJOR< CRITICAL, and BLOCKING.  Each 
+The following "Rules" are grouped by one of five severity levels:  INFO, MINOR, MAJOR, CRITICAL, and BLOCKING.  Each 
 check gives a basic description based on the original [Sonar XQuery plugin](https://github.com/malteseduck/sonar-xquery-plugin) and the [Blakely.com blog article]( 
 https://blakeley.com/blogofile/archives/518/).      
 
