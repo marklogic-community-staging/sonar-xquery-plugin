@@ -9,6 +9,7 @@ class XQueryDefaultProfile : BuiltInQualityProfilesDefinition {
         for (check in XQueryChecks.defaultChecks) {
             default.activateRule(XQueryChecks.REPOSITORY_KEY, check.key)
         }
+        default.done()
     }
 }
 
