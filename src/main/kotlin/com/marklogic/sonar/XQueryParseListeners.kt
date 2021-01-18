@@ -1,4 +1,4 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
 import org.antlr.v4.runtime.Token
 import org.antlr.v4.runtime.tree.Trees
@@ -219,3 +219,8 @@ class XPathTextStepsListener : AbstractXQueryParserListener() {
         }
     }
 }
+
+/** TODO: EffectiveBooleanListener
+ * Implementation on hold.  Requires searching entire project for other function calls/return types, which this
+ * version does not support due to memory constraints.
+ **/

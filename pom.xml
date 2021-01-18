@@ -45,7 +45,7 @@
                 <version>1.20.0.405</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <pluginClass>net.crosier.sonar.XQueryPlugin</pluginClass>
+                    <pluginClass>com.marklogic.sonar.XQueryPlugin</pluginClass>
                     <pluginName>XQuery</pluginName>
                     <pluginDescription>Code Analyzer for XQuery</pluginDescription>
                     <pluginOrganizationName>crosier.net</pluginOrganizationName>

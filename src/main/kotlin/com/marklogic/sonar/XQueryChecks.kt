@@ -1,4 +1,4 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
 import org.antlr.v4.runtime.tree.ParseTree
 import org.antlr.v4.runtime.tree.ParseTreeWalker
@@ -24,6 +24,10 @@ class XQueryChecks {
                 FunctionMappingCheck(),
                 XPathDescendantStepsCheck(),
                 XPathTextStepsCheck()
+        )
+
+        val defaultChecks = arrayOf(
+                XQueryVersionCheck()
         )
     }
 }

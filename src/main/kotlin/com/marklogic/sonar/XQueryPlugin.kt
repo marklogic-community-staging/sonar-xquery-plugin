@@ -1,4 +1,4 @@
-package net.crosier.sonar
+package com.marklogic.sonar
 
 import org.sonar.api.Plugin
 import org.sonar.api.Plugin.Context
@@ -11,6 +11,7 @@ class XQueryPlugin : Plugin {
         context.addExtensions(
                 XQuery::class.java,
                 XQueryDefaultProfile::class.java,
+                XQuerySonarWayProfile::class.java,
                 XQuerySensor::class.java,
                 XQueryRules::class.java
         )
