@@ -48,8 +48,8 @@
                     <pluginClass>com.marklogic.sonar.XQueryPlugin</pluginClass>
                     <pluginName>XQuery</pluginName>
                     <pluginDescription>Code Analyzer for XQuery</pluginDescription>
-                    <pluginOrganizationName>crosier.net</pluginOrganizationName>
-                    <pluginOrganizationUrl>http://crosier.net</pluginOrganizationUrl>
+                    <pluginOrganizationName>marklogic.com</pluginOrganizationName>
+                    <pluginOrganizationUrl>https://marklogic.com</pluginOrganizationUrl>
                 </configuration>
             </plugin>
         </plugins>
