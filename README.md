@@ -1,7 +1,7 @@
 # Sonar XQuery Plugin
 
 This language plugin for the SonarQube code analysis tool (http://sonarqube.org) is intended to work on recent versions of the SonarQube platform 
-(currently version 8.6). It is based on the original plugin work by Chris Cieslinkski (https://github.com/malteseduck/sonar-xquery-plugin/) 
+(currently version 8.9 LTS). It is based on the original plugin work by Chris Cieslinkski (https://github.com/malteseduck/sonar-xquery-plugin/) 
 which was last updated to work on Sonar 4.3. This plugin is a COMPLETE rewrite, and has been written using the Kotlin language.
 
 The XQuery parser imported is from xqDocs (https://github.com/xqdoc/xqdoc) and is based on ANTLR4. This parser includes some xqDocs

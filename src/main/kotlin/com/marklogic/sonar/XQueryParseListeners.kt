@@ -75,7 +75,7 @@ class XdmpEvalListener : AbstractXQueryParserListener() {
     override fun enterQName(ctx: XQueryParser.QNameContext) {
         val qname = ctx.FullQName()?.text ?: ""
 
-        if (qname.toLowerCase() == "xdmp:eval") {
+        if (qname.lowercase() == "xdmp:eval") {
             addViolation(Violation(ctx.FullQName().symbol.line))
         }
     }
@@ -85,7 +85,7 @@ class XdmpValueListener : AbstractXQueryParserListener() {
     override fun enterQName(ctx: XQueryParser.QNameContext) {
         val qname = ctx.FullQName()?.text ?: ""
 
-        if (qname.toLowerCase() == "xdmp:value") {
+        if (qname.lowercase() == "xdmp:value") {
             addViolation(Violation(ctx.FullQName().symbol.line))
         }
     }
@@ -98,7 +98,7 @@ class OperationsInPredicateListener : AbstractXQueryParserListener() {
     override fun enterPredicate(ctx: XQueryParser.PredicateContext?) {
         super.enterPredicate(ctx)
 
-        /* Check Expresions */
+        /* Check Expressions */
         for (expr in expressions) {
             if (Trees.findAllTokenNodes(ctx, expr).isNotEmpty()) {
                 addViolation(Violation(ctx!!.LBRACKET().symbol.line))
@@ -134,7 +134,7 @@ class StrongTypingInFlworListener : AbstractXQueryParserListener() {
         super.enterLetClause(ctx)
 
         // allowing bypass of $_ variable name from strong typing
-        if (ctx?.letBinding?.typeDeclaration() == null && !(ctx!!.letBinding.varName().text == ("_"))) {
+        if (ctx?.letBinding?.typeDeclaration() == null && ctx!!.letBinding.varName().text != ("_")) {
             addViolation(Violation(ctx.KW_LET().symbol.line))
         }
     }
@@ -142,7 +142,7 @@ class StrongTypingInFlworListener : AbstractXQueryParserListener() {
     override fun enterForClause(ctx: XQueryParser.ForClauseContext?) {
         super.enterForClause(ctx)
 
-        if (ctx?.forBinding()?.size ?:0 > 0)
+        if ((ctx?.forBinding()?.size ?: 0) > 0)
             for (binding in ctx!!.forBinding()) {
                 if (binding?.typeDeclaration() == null) {
                     addViolation(Violation(ctx.KW_FOR().symbol.line))
